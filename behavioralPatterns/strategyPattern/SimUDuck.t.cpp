@@ -13,6 +13,11 @@ int main() {
 	pDecoyDuck->swim();
 	pDecoyDuck->performFly();
 
+	pDecoyDuck->setFlyBehavior(new behavior::FlyWithWings());
+	pDecoyDuck->display();
+	pDecoyDuck->swim();
+	pDecoyDuck->performFly();
+
 	Duck *pMallarDuck = new MallarDuck();
 	pMallarDuck->display();
 	pMallarDuck->swim();

@@ -18,6 +18,7 @@ void Duck::performFly() {
 }
 
 void Duck::setFlyBehavior(behavior::FlyBehavior *flyBehavior) {
+	delete this->mFlyBehavior;
 	this->mFlyBehavior = flyBehavior;
 }
 
