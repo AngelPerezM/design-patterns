@@ -12,6 +12,7 @@ namespace behavior {
 	 * Implements a fly behavior (concrete strategy).
 	 */
 	class FlyNoWay : public FlyBehavior {
+	    public:
 		~FlyNoWay();
 		/**
 		 * Implements the fly method.

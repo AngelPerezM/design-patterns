@@ -12,8 +12,8 @@ int main() {
 	pDecoyDuck->display();
 	pDecoyDuck->swim();
 	pDecoyDuck->performFly();
-
-	pDecoyDuck->setFlyBehavior(new behavior::FlyWithWings());
+	
+	pDecoyDuck->setFlyBehavior(new behavior::FlyWithWings);
 	pDecoyDuck->display();
 	pDecoyDuck->swim();
 	pDecoyDuck->performFly();
@@ -22,6 +22,9 @@ int main() {
 	pMallarDuck->display();
 	pMallarDuck->swim();
 	pMallarDuck->performFly();
+
+	delete pDecoyDuck;
+	delete pMallarDuck;
 
 	return 0;
 }

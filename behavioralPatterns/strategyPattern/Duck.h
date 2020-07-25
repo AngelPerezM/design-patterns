@@ -13,7 +13,7 @@ public:
 	 * @brief Destructor class.
 	 * This class deletes/de-allocates reserved memory.
 	 */
-	~Duck();
+	virtual ~Duck();
 	/**
 	 * Performs the fly action.
 	 */
@@ -22,7 +22,7 @@ public:
 	 * This method sets the strategy member from the "Strategy design pattern"
 	 * @param flyBehavior represents the strategy object.
 	 */
-	void setFlyBehavior( behavior::FlyBehavior *flyBehavior);
+	void setFlyBehavior(behavior::FlyBehavior *flyBehavior);
 	/**
 	 * Swim action.
 	 */

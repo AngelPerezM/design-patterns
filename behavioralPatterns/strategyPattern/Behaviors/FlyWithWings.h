@@ -12,7 +12,8 @@ namespace behavior {
 	 * Implements a fly behavior (concrete strategy).
 	 */
 	class FlyWithWings : public FlyBehavior {
-		~FlyWithWings();
+	    public:
+		virtual ~FlyWithWings();
 		/**
 		 * Implements the fly method.
 		 */

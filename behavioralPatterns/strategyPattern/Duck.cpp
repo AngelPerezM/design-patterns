@@ -10,7 +10,8 @@ Duck::Duck() {
 }
 
 Duck::~Duck() {
-	delete this->mFlyBehavior;
+	if(this->mFlyBehavior != nullptr)
+		delete this->mFlyBehavior;
 }
 
 void Duck::performFly() {
