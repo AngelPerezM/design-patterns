@@ -8,9 +8,9 @@ TARGET = $(BUILD_ROOT)/SimUDuck.t
 
 .PHONY: all
 
-all: $(TARGET)
+all: directories $(TARGET)
  
-$(TARGET): $(BUILD_DIRS) $(OBJECTS)
+$(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
 $(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h
@@ -20,5 +20,6 @@ $(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h
 
 clean: ; rm -f $(OBJECTS) $(TARGET)
 
-$(BUILD_DIRS):
-	mkdir -p $@
+.PHONY: directories
+
+directories: ; mkdir -p $(BUILD_DIRS)
