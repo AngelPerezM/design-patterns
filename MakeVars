@@ -1,19 +1,35 @@
-BUILD_DEBUG ?= yes
+$(info ################################### MakeVars ###################################)
+INCLUDE_ROOT := include
+SOURCE_ROOT := source
+BUILD_ROOT := build
 
-CC = g++ -Os
+# INCLUDE_DIRS := $(shell find $(INCLUDE_ROOT) -type d)
+SOURCE_DIRS := $(shell find $(SOURCE_ROOT) -type d)
+BUILD_DIRS := $(subst $(SOURCE_ROOT),$(BUILD_ROOT),$(SOURCE_DIRS))
+# $(info [INFO] $($(SOURCE_DIRS)) = $(SOURCE_DIRS).)
+$(info [INFO] $$(BUILD_DIRS) = $(BUILD_DIRS).)
+
+SOURCES := $(shell find $(SOURCE_ROOT) -name '*.cpp')
+INCLUDES :=  $(shell find $(INCLUDE_ROOT) -name '*.h')
+OBJECTS := $(patsubst %.cpp,%.o,$(subst $(SOURCE_ROOT),$(BUILD_ROOT),$(SOURCES)))
+$(info [INFO] $$(SOURCES) = $(SOURCES).)
+$(info [INFO] $$(INCLUDES) = $(INCLUDES).)
+$(info [INFO] $$(OBJECTS) = $(OBJECTS).)
+
+
+# Compiler configuration:
+CC = g++
 CFLAGS = -Wall -Wextra -Werror -Wformat=2 -pipe \
-	-Wnull-dereference -Wlogical-op -Wduplicated-cond -Wduplicated-branches -Wshadow
+	 -Wnull-dereference -Wlogical-op -Wduplicated-cond -Wduplicated-branches -Wshadow \
+	 -I$(INCLUDE_ROOT)
 CDEBUG = -g -DDEBUG
+
+BUILD_DEBUG ?= yes
  
 ifeq ($(BUILD_DEBUG), yes)  # -- Debug mode?
 CFLAGS += $(CDEBUG)
 $(info [INFO] All files will be compiled in debug mode.)
 else
+CFLAGS += -Os
 $(info [INFO] All files will be compiled in release mode.)
 endif
-
-INCLUDE_DIR = .
-SOURCE_DIR = .
-BUILD_DIR = build
-DEFINE =
-LIBDIR = lib

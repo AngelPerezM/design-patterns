@@ -2,7 +2,7 @@
 // Created by grover on 24/6/20.
 //
 
-#include "FlyNoWay.h"
+#include "Behaviors/FlyNoWay.h"
 #include <iostream>
 
 
