@@ -1,4 +1,5 @@
-/bin/
+bin/
+build/
 .idea/
 *.iml
 *.eml
