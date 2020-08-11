@@ -12,9 +12,11 @@ $(info [INFO] $$(BUILD_DIRS) = $(BUILD_DIRS).)
 SOURCES := $(shell find $(SOURCE_ROOT) -name '*.cpp')
 INCLUDES :=  $(shell find $(INCLUDE_ROOT) -name '*.h')
 OBJECTS := $(patsubst %.cpp,%.o,$(subst $(SOURCE_ROOT),$(BUILD_ROOT),$(SOURCES)))
+DEPENDENCIES := $(OBJECTS:.o=.d)
 $(info [INFO] $$(SOURCES) = $(SOURCES).)
 $(info [INFO] $$(INCLUDES) = $(INCLUDES).)
 $(info [INFO] $$(OBJECTS) = $(OBJECTS).)
+$(info [INFO] $$(DEPENDENCIES) = $(DEPENDENCIES).)
 
 
 # Compiler configuration:
@@ -22,6 +24,9 @@ CC = g++
 CFLAGS = -Wall -Wextra -Werror -Wformat=2 -pipe \
 	 -Wnull-dereference -Wlogical-op -Wduplicated-cond -Wduplicated-branches -Wshadow \
 	 -I$(INCLUDE_ROOT)
+# flags required for dependency generation; passed to compilers
+DEPFLAGS = -MT $@ -MD #-MP -MF $(BUILD_ROOT)/$*.Td
+# debug flags.
 CDEBUG = -g -DDEBUG
 
 BUILD_DEBUG ?= yes
@@ -30,6 +35,6 @@ ifeq ($(BUILD_DEBUG), yes)  # -- Debug mode?
 CFLAGS += $(CDEBUG)
 $(info [INFO] All files will be compiled in debug mode.)
 else
-CFLAGS += -Os
+CFLAGS += -Os # <--- for size optimization. Default by G++: O0.
 $(info [INFO] All files will be compiled in release mode.)
 endif
