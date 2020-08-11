@@ -13,13 +13,24 @@ all: directories $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
-$(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h $(BUILD_ROOT)/%.d
+	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
+
+
+# $(DEPENDENCIES): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp
+#	$(CC) $(CFLAGS) -MM $< | sed 
+
+#include $(DEPENDENCIES)
 
 .PHONY: clean
 
-clean: ; rm -f $(OBJECTS) $(TARGET)
+clean: ; rm -f $(OBJECTS) $(TARGET) $(DEPENDENCIES)
 
 .PHONY: directories
 
 directories: ; mkdir -p $(BUILD_DIRS)
+
+.PRECIOUS: $(DEPENDENCIES)
+$(DEPENDENCIES): $(BUILD_ROOT)/%.d: ;
+
+-include $(DEPENDENCIES)
