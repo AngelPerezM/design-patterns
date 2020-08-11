@@ -16,12 +16,6 @@ $(TARGET): $(OBJECTS)
 $(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h $(BUILD_ROOT)/%.d
 	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 
-
-# $(DEPENDENCIES): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp
-#	$(CC) $(CFLAGS) -MM $< | sed 
-
-#include $(DEPENDENCIES)
-
 .PHONY: clean
 
 clean: ; rm -f $(OBJECTS) $(TARGET) $(DEPENDENCIES)
