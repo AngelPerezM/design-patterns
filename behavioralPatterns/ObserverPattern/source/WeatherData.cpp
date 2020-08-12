@@ -12,6 +12,9 @@
 /* Defines section
 *******************************************************************************/
 
+/* Function definitions
+*******************************************************************************/
+
 WeatherData::WeatherData () {
 	mTemperature = 0;
 	mHumidity = 0;
@@ -35,4 +38,28 @@ void WeatherData::notify() {
 		++it) {
 		(*it)->update();
 	}
+}
+
+void WeatherData::measurementsChanged() {
+	notify();
+}
+
+void WeatherData::setMeasurements(const float temperature, const float humidity, const float pressure) {
+
+	mTemperature = temperature;
+	mHumidity = humidity;
+	mPressure = pressure;
+	measurementsChanged();
+}
+
+float WeatherData::getTemperature() const {
+	return mTemperature;
+}
+
+float WeatherData::getHumidity() const {
+	return mHumidity;
+}
+
+float WeatherData::getPressure() const{
+	return mPressure;
 }

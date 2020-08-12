@@ -39,15 +39,29 @@ public:
 	/**
 	 * @brief Method called whenever the weather measurements have been updated.
 	 */
-	void messurementsChanged();
+	void measurementsChanged();
 
+	/**
+	 * There is no class that will call measurementsChanged, so we will do it
+	 * in main class.
+	 */
 	// It is better to write a setter for each measurement but for time ...
-	void setMeasurements(float temperature, float humidity, float pressure);
+	void setMeasurements(const float temperature, const float humidity, 
+		const float pressure);
 
 	// ACCESSORS
-	float getTemperature();
-	float getHumidity();
-	float getPressure();
+	/**
+	 * @returns Current temperature.
+	 */
+	float getTemperature() const;
+	/**
+	 * @returns Current humidity.
+	 */
+	float getHumidity() const;
+	/**
+	 * @returns Current pressure.
+	 */
+	float getPressure() const;
 
 private:
 	float mTemperature;
