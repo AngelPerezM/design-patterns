@@ -31,12 +31,14 @@ public:
 	 * Displays information about the duck.
 	 */
 	virtual void display() = 0;
-	protected:
+
+protected:
 	/**
 	 * Constructor class
 	 */
 	Duck();
-	private:
+	
+private:
 	/**
 	 * Represents the strategy from the "Strategy design "
 	 */
