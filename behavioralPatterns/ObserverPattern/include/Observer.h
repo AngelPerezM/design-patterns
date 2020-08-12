@@ -8,7 +8,6 @@
 
 /* Include section
 *******************************************************************************/
-#include "Observable.h"			// For observable objects.
 
 /* Defines section
 *******************************************************************************/
@@ -24,14 +23,14 @@ public:
 	 * @brief Destructor class.
 	 * This class deletes/de-allocates reserved memory.
 	 */
-	virtual ~Observer();
+	virtual ~Observer() {};
 
 	// MANIPULATORS
 	/**
 	 * @brief This is the interface used by the observable (subject) to notify
 	 * its observers.
 	 */
-	virtual void update(Observable *observable = nullptr) = 0;
+	virtual void update() = 0;
 
 };
 
