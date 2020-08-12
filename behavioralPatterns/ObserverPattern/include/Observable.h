@@ -24,7 +24,7 @@ public:
 	 * @brief Destructor class.
 	 * This class deletes/de-allocates reserved memory.
 	 */
-	virtual ~Observable();
+	virtual ~Observable() {};
 
 	// MANIPULATORS
 	/**
