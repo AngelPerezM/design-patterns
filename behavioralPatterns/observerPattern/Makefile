@@ -13,7 +13,7 @@ all: directories $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
-$(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(INCLUDE_ROOT)/%.h $(BUILD_ROOT)/%.d
+$(OBJECTS): $(BUILD_ROOT)/%.o: $(SOURCE_ROOT)/%.cpp $(BUILD_ROOT)/%.d
 	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 
 .PHONY: clean
