@@ -40,15 +40,15 @@ int main () {
 		new Mocha(
 			new Milk(decaf));
 	cout << decaf->getDescription() << " costs " << decaf->cost() << endl;
-	/*				|
-	 *				v 							^
-	 |Mocha			getDescription()			|
-									|			", Mocha"
-									v 				|
-	 	| Milk					getDescription()	", Milk"
-												|		|
-												V 		"Decaf Coffee"
-	 		| Decaf 					getDescription()	|
+	/*			|
+	 *			v 			^
+	 |Mocha		getDescription()		|
+					|		", Mocha"
+					v 			|
+	 	| Milk			getDescription()	", Milk"
+							|		|
+							v 		"Decaf Coffee"
+	 		| Decaf 			getDescription()	|
 	*/
 
 	return 0;

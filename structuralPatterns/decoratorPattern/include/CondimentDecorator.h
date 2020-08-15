@@ -25,30 +25,30 @@ public:
     /**
      *
      */
-	virtual ~CondimentDecorator () {};
+    virtual ~CondimentDecorator () {};
 
     // ACCESORS
     /**
      *
      */
-	virtual std::string getDescription() override;
-	/**
-	 *
-	 */
-	virtual float cost() override;
+    virtual std::string getDescription() override;
+    /**
+     *
+     */
+    virtual float cost() override;
 
 protected:
     // CONSTRUCTOR
     /**
      *
      */
-	CondimentDecorator(Beverage *component);
+    CondimentDecorator(Beverage *component);
 
-	// MEMBERS
-	/**
-	 *
-	 */
-	Beverage *mComponent;
+    // MEMBERS
+    /**
+     *
+     */
+    Beverage *mComponent;
 
 };
 
