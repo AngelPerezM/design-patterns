@@ -12,7 +12,7 @@
 /* Include section
 *******************************************************************************/
 #include "pizzas/Pizza.h"
-#include "pizzas/PizzaIngredientFactory.h"
+#include "pizzas/ingredientsFactory/PizzaIngredientFactory.h"
 
 /* Defines section
 *******************************************************************************/
@@ -32,8 +32,8 @@ public:
 	~CheesePizza();
 
 	// MANIPULATORS
-	virtual void prepare() override();
-	
+	virtual void prepare() override;
+
 private:
 	// MEMBERS
 	/**

@@ -12,7 +12,7 @@
 /* Include section
 *******************************************************************************/
 #include "pizzas/Pizza.h"
-#include "pizzas/PizzaIngredientFactory.h"
+#include "pizzas/ingredientsFactory/PizzaIngredientFactory.h"
 
 /* Defines section
 *******************************************************************************/
@@ -33,6 +33,13 @@ public:
 
 	// MANIPULATORS
 	virtual void prepare() override;
+
+private:
+	// MEMBERS
+	/**
+	 * abstract factory that creates the family of ingredients.
+	 */
+	PizzaIngredientFactory *mPizzaIngredientFactory;
 };
 
 #endif // PEPPERONI_PIZZA_H

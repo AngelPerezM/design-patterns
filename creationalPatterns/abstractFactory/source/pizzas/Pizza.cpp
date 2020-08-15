@@ -40,3 +40,7 @@ void Pizza::box() {
 std::string Pizza::getName(){
 	return mName;
 }
+
+void Pizza::setName(std::string const name) {
+	this->mName = name;
+}

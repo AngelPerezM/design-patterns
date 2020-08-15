@@ -29,12 +29,14 @@ ChicagoPizzaStore::~ChicagoPizzaStore() {
 
 Pizza * ChicagoPizzaStore::createPizza(std::string type) {
 	PizzaIngredientFactory *ingredientFactory = new ChicagoPizzaIngredientFactory();
-	if(type == "Cheese") {
-		return new CheesePizza(ingredientFactory);
-	} else if (type == "Pepperoni") {
-		return new PepperoniPizza(ingredientFactory);
-	} else {
-		return nullptr;
-	}
+	Pizza * pizza = nullptr;
 
+	if(type == "Cheese") {
+		pizza = new CheesePizza(ingredientFactory);
+		pizza->setName("Chicago Cheese Pizza");
+	} else if (type == "Pepperoni") {
+		pizza = new PepperoniPizza(ingredientFactory);
+		pizza->setName("Chicago Pepperoni Pizza");
+	} 
+	return pizza;
 }

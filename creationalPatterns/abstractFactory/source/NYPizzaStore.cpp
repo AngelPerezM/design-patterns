@@ -33,12 +33,14 @@ NYPizzaStore::~NYPizzaStore() {
 Pizza * NYPizzaStore::createPizza(std::string type) {
 	// passes a concrete abstract factory to the pizza type.
 	PizzaIngredientFactory *ingredientFactory = new NYPizzaIngredientFactory();
-	if(type == "Cheese") {
-		return new CheesePizza(ingredientFactory);
-	} else if (type == "Pepperoni") {
-		return new PepperoniPizza(ingredientFactory);
-	} else {
-		return nullptr;
-	}
+	Pizza * pizza = nullptr;
 
+	if(type == "Cheese") {
+		pizza = new CheesePizza(ingredientFactory);
+		pizza->setName("NY Cheese Pizza");
+	} else if (type == "Pepperoni") {
+		pizza = new PepperoniPizza(ingredientFactory);
+		pizza->setName("NY Pepperoni Pizza");
+	} 
+	return pizza;
 }

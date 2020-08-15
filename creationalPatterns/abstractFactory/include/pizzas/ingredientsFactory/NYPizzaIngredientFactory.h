@@ -1,8 +1,9 @@
-#ifndef PIZZA_INGREDIENT_FACTORY_H
-#define PIZZA_INGREDIENT_FACTORY_H
+
+#ifndef N_Y_PIZZA_INGREDIENT_FACTORY_H
+#define N_Y_PIZZA_INGREDIENT_FACTORY_H
 
 /*******************************************************************************
-* PizzaIngredientFactory.h
+* NYPizzaIngredientFactory.h
 *
 * Author: Ángel Pérez
 *
@@ -11,30 +12,34 @@
 
 /* Include section
 *******************************************************************************/
-#include "pizzas/ingredientsFactory/Dough.h"
-#include "pizzas/ingredientsFactory/Sauce.h"
+#include "pizzas/ingredientsFactory/PizzaIngredientFactory.h"
 
 /* Defines section
 *******************************************************************************/
 
-class PizzaIngredientFactory {
-public:
+class NYPizzaIngredientFactory : public PizzaIngredientFactory{
+	// CONSTRUCTOR
+	/**
+	 *
+	 */
+
 	// DESTRUCTOR
 	/**
 	 *
 	 */
-	virtual ~PizzaIngredientFactory() {};
+	~NYPizzaIngredientFactory() {};
 
 	// MANIPULATORS
 	/**
 	 *
 	 */
-	virtual Dough * createDough() = 0;
+	virtual Dough * createDough() override ;
 	/**
 	 *
 	 */
-	virtual Sauce * createSauce() = 0;
+	virtual Sauce * createSauce() override ;
+
 
 };
 
-#endif // PIZZA_INGREDIENT_FACTORY_H
+#endif // N_Y_PIZZA_INGREDIENT_FACTORY_H

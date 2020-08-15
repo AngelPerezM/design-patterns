@@ -13,8 +13,8 @@
 *******************************************************************************/
 #include <string>
 #include <list>
-#include "pizzas/ingredients/Dough.h"		// Dough.
-#include "pizzas/ingredients/Sauce.h"		// Sauce.
+#include "pizzas/ingredientsFactory/Dough.h"		// Dough.
+#include "pizzas/ingredientsFactory/Sauce.h"		// Sauce.
 
 /* Defines section
 *******************************************************************************/
@@ -48,6 +48,10 @@ public:
 	 *
 	 */
 	virtual void box();
+	/**
+	 *
+	 */
+	void setName(std::string const name);
 
 	// ACCESORS
 	/**

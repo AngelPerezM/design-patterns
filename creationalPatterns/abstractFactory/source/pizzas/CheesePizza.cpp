@@ -26,9 +26,11 @@ CheesePizza::~CheesePizza() {
 	delete mPizzaIngredientFactory;
 }
 
-void Cheese::prepare() {
+void CheesePizza::prepare() {
 	// Calls to factory methods from the abstract factory.
 	std::cout << "Preparing " << mName << ":" << std::endl;
 	mDough = mPizzaIngredientFactory->createDough();
-	mSauce = mPizzaIngredientFactory->createSouce();
+	mSauce = mPizzaIngredientFactory->createSauce();
+	std::cout << "-" << mDough->toString() << std::endl;
+	std::cout << "-" << mSauce->toString() << std::endl;
 }

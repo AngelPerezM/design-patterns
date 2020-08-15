@@ -1,40 +1,28 @@
-#ifndef PIZZA_INGREDIENT_FACTORY_H
-#define PIZZA_INGREDIENT_FACTORY_H
+
+#ifndef THIN_CRUST_DOUGH_H
+#define THIN_CRUST_DOUGH_H
 
 /*******************************************************************************
-* PizzaIngredientFactory.h
+* ThinCrustDough.h
 *
 * Author: Ángel Pérez
 *
-* dd/mm/yyyy - Version 
+* 15/08/2020 - Version 1 
 *******************************************************************************/
 
 /* Include section
 *******************************************************************************/
+#include <string>
 #include "pizzas/ingredientsFactory/Dough.h"
-#include "pizzas/ingredientsFactory/Sauce.h"
 
 /* Defines section
 *******************************************************************************/
+class ThinCrustDough : public Dough {
 
-class PizzaIngredientFactory {
 public:
-	// DESTRUCTOR
-	/**
-	 *
-	 */
-	virtual ~PizzaIngredientFactory() {};
-
-	// MANIPULATORS
-	/**
-	 *
-	 */
-	virtual Dough * createDough() = 0;
-	/**
-	 *
-	 */
-	virtual Sauce * createSauce() = 0;
-
+	virtual std::string toString() override {
+		return "Thin Crust Dough";
+	};
 };
 
-#endif // PIZZA_INGREDIENT_FACTORY_H
+#endif // THIN_CRUST_DOUGH_H

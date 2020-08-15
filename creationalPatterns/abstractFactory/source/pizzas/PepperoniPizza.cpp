@@ -23,12 +23,14 @@ PepperoniPizza::PepperoniPizza(PizzaIngredientFactory *pizzaIngredientFactory) :
 }
 
 PepperoniPizza::~PepperoniPizza(){
-	delete pizzaIngredientFactory;
+	delete mPizzaIngredientFactory;
 }
 
 void PepperoniPizza::prepare() {
 	// Calls to factory methods from the abstract factory.
 	std::cout << "Preparing " << mName << ":" << std::endl;
 	mDough = mPizzaIngredientFactory->createDough();
-	mSauce = mPizzaIngredientFactory->createSouce();
+	mSauce = mPizzaIngredientFactory->createSauce();
+	std::cout << "-" << mDough->toString() << std::endl;
+	std::cout << "-" << mSauce->toString() << std::endl;
 }

@@ -1,40 +1,28 @@
-#ifndef PIZZA_INGREDIENT_FACTORY_H
-#define PIZZA_INGREDIENT_FACTORY_H
+
+#ifndef PLUM_TOMATO_SAUCE_H
+#define PLUM_TOMATO_SAUCE_H
 
 /*******************************************************************************
-* PizzaIngredientFactory.h
+* PlumTomatoSauce.h
 *
 * Author: Ángel Pérez
 *
-* dd/mm/yyyy - Version 
+* 15/08/2020 - Version 1 
 *******************************************************************************/
 
 /* Include section
 *******************************************************************************/
-#include "pizzas/ingredientsFactory/Dough.h"
+#include <string>
 #include "pizzas/ingredientsFactory/Sauce.h"
 
 /* Defines section
 *******************************************************************************/
+class PlumTomatoSauce : public Sauce {
 
-class PizzaIngredientFactory {
 public:
-	// DESTRUCTOR
-	/**
-	 *
-	 */
-	virtual ~PizzaIngredientFactory() {};
-
-	// MANIPULATORS
-	/**
-	 *
-	 */
-	virtual Dough * createDough() = 0;
-	/**
-	 *
-	 */
-	virtual Sauce * createSauce() = 0;
-
+	virtual std::string toString() override {
+		return "Plum Tomato Sauce";
+	};
 };
 
-#endif // PIZZA_INGREDIENT_FACTORY_H
+#endif // MARINARA_H
