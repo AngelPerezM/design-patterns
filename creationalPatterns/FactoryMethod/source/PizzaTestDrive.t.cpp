@@ -22,15 +22,13 @@ int main() {
 	PizzaStore *pizzaStore = new NYPizzaStore();
 
 	std::cout << std::endl;
-	Pizza *pizza =  pizzaStore->createPizza("Cheese");	
+	Pizza *pizza =  pizzaStore->orderPizza("Cheese");	
 	std::cout << pizza->getName() << ": " << std::endl; 
-	pizza->prepare();
 	delete pizza;
 
 	std::cout << std::endl;
-	pizza =  pizzaStore->createPizza("Pepperoni");
+	pizza =  pizzaStore->orderPizza("Pepperoni");
 	std::cout << pizza->getName() << ": " << std::endl; 
-	pizza->prepare();
 	delete pizza;
 
 	delete pizzaStore;
@@ -39,15 +37,13 @@ int main() {
 	pizzaStore = new ChicagoPizzaStore();
 
 	std::cout << std::endl;
-	pizza =  pizzaStore->createPizza("Cheese");
+	pizza =  pizzaStore->orderPizza("Cheese");
 	std::cout << pizza->getName() << ": " << std::endl; 
-	pizza->prepare();
 	delete pizza;
 
 	std::cout << std::endl;
-	pizza =  pizzaStore->createPizza("Pepperoni");
+	pizza =  pizzaStore->orderPizza("Pepperoni");
 	std::cout << pizza->getName() << ": " << std::endl; 
-	pizza->prepare();
 	delete pizza;
 	
 	delete pizzaStore;

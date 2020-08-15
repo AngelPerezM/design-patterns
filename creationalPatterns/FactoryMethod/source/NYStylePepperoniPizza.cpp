@@ -33,5 +33,5 @@ NYStylePepperoniPizza::~NYStylePepperoniPizza(){
 }
 
 void NYStylePepperoniPizza::cut() {
-	std::cout << "Cutting the pizza into square slices.";
+	std::cout << "Cutting the pizza into square slices." << std::endl;
 }
